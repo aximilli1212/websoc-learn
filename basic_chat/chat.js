@@ -5,7 +5,7 @@ const socketio = require('socket.io');
 app.use(express.static(__dirname + '/public'));
 
 
-const expressServer = app.listen(4000);
+const expressServer = app.listen(4400);
 
 const io = socketio(expressServer);
 
@@ -20,4 +20,4 @@ io.on("connection",(socket)=>{
          console.log(msg);
          io.emit('messageToClients',{text:msg.msg});
     })
-})
+});
